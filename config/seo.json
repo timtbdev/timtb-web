@@ -1,0 +1,16 @@
+
+{
+    "title": "Tim | Android Developer",
+    "description": "San-Francisco based Android Developer",
+    "openGraph": {
+      "type": "website",
+      "locale": "en_US",
+      "url": "https://timtb.dev",
+      "site_name": "Tim | Android Developer"
+    },
+    "twitter": {
+      "handle": "@timtbdev",
+      "site": "@imtbdev",
+      "cardType": "summary_large_image"
+    }
+  }
