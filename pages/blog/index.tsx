@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { Posts } from "@components/common/";
 import { Profile } from "@components/common/";
 import { Tabs } from "@components/common/";
+import { Footer } from "@components/common/";
 
 const postsQuery = groq`*[_type == "blog" && defined(slug.current)]`;
 
@@ -55,6 +56,7 @@ export default function Blog(props) {
         />
         <Tabs />
         <Posts posts={posts} />
+        <Footer />
       </Layout>
     </>
   );

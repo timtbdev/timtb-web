@@ -61,7 +61,7 @@ export default function ProjectDetail(props) {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
-                <p className="text-sm font-medium text-gray-500">
+                <p className="text-base font-medium text-gray-500">
                   Published:{" "}
                   <time dateTime={new Date(publishedAt).toDateString()}>
                     {new Date(publishedAt).toDateString()}
@@ -106,34 +106,34 @@ export default function ProjectDetail(props) {
                   <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
                     <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                       <div className="sm:col-span-1">
-                        <dt className="text-sm font-medium text-gray-500">
+                        <dt className="text-base font-medium text-gray-900">
                           Language
                         </dt>
-                        <dd className="mt-1 text-sm text-gray-900">
+                        <dd className="mt-1 text-base text-gray-500">
                           {language}
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
-                        <dt className="text-sm font-medium text-gray-500">
+                        <dt className="text-base font-medium text-gray-900">
                           Android
                         </dt>
-                        <dd className="mt-1 text-sm text-gray-900">
+                        <dd className="mt-1 text-base text-gray-500">
                           {components}
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
-                        <dt className="text-sm font-medium text-gray-500">
+                        <dt className="text-base font-medium text-gray-900">
                           Architecture
                         </dt>
-                        <dd className="mt-1 text-sm text-gray-900">
+                        <dd className="mt-1 text-base text-gray-500">
                           {architecture}
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
-                        <dt className="text-sm font-medium text-gray-500">
+                        <dt className="text-base font-medium text-gray-900">
                           Backend
                         </dt>
-                        <dd className="mt-1 text-sm text-gray-900">
+                        <dd className="mt-1 text-base text-gray-500">
                           {backend}
                         </dd>
                       </div>
@@ -146,7 +146,7 @@ export default function ProjectDetail(props) {
                             <div className="w-full border-t border-gray-300"></div>
                           </div>
                           <div className="relative flex justify-start">
-                            <span className="pr-2 bg-white font-medium text-sm text-gray-500">
+                            <span className="pr-2 bg-white font-semibold text-base text-gray-900">
                               Description
                             </span>
                           </div>
@@ -154,7 +154,7 @@ export default function ProjectDetail(props) {
                         <PortableText
                           blocks={description}
                           serializers={serializers}
-                          className="mt-1 text-sm text-gray-900"
+                          className="mt-1 text-base text-gray-500"
                         />
                       </div>
                     </dl>
@@ -170,7 +170,7 @@ export default function ProjectDetail(props) {
               <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
                 <h2
                   id="timeline-title"
-                  className="text-lg font-medium text-gray-900"
+                  className="text-lg mb-6 font-medium text-gray-900"
                 >
                   Screenshots
                 </h2>

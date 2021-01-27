@@ -4,6 +4,7 @@ import { getClient, usePreviewSubscription } from "@libs/sanity";
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { ProjectHeader } from "@components/common/";
+import { Footer } from "@components/common/";
 
 const projectQuery = groq`*[_type == "project" && slug.current == $slug][0]
 {
@@ -99,6 +100,7 @@ export default function Project(props) {
         description={description}
         links={links}
       />
+      <Footer />
     </>
   );
 }
