@@ -11,7 +11,7 @@ const postQuery = groq`*[_type == "blog" && slug.current == $slug][0]
   slug,
   coverImage,
   publishedAt,
-  fullContent,
+  fullContent
 }
 `;
 
