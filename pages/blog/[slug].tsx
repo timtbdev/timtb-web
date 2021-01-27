@@ -62,13 +62,7 @@ export default function Blog(props) {
     enabled: preview || router.query.preview !== null,
   });
 
-  const {
-    title,
-    slug,
-    coverImage,
-    publishedAt,
-    fullContent,
-  } = post;
+  const { title, slug, coverImage, publishedAt, fullContent } = post;
 
   const { name, profileImage } = profile;
   return (
