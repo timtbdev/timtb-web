@@ -35,6 +35,8 @@ export async function getStaticProps({ params, preview = false }) {
   });
   const profileData = await getClient(preview).fetch(profileQuery);
 
+  
+
   return {
     props: { preview, projectData, profileData },
   };
@@ -47,7 +49,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

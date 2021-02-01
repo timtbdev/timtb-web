@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -48,7 +48,7 @@ export default function Blog(props) {
   const { postData, profileData, preview } = props;
   const router = useRouter();
 
-  if (!router.isFallback && !postData && !profileData) {
+  if (!router.isFallback && !postData) {
     return <Error statusCode={404} />;
   }
   const { data: post } = usePreviewSubscription(postQuery, {
