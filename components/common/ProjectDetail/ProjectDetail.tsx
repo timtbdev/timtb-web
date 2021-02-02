@@ -5,6 +5,7 @@ import PortableText from "@sanity/block-content-to-react";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { ScreenshotSlider } from "@components/common/";
+import { format } from "date-fns";
 
 const serializers = {
   types: {
@@ -64,7 +65,7 @@ export default function ProjectDetail(props) {
                 <p className="text-base font-medium text-gray-500">
                   Published:{" "}
                   <time dateTime={new Date(publishedAt).toDateString()}>
-                    {new Date(publishedAt).toDateString()}
+                    {format(new Date(publishedAt), "MMMM yyyy")}
                   </time>
                 </p>
               </div>

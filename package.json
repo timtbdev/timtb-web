@@ -14,6 +14,7 @@
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.1.0",
     "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
     "get-youtube-id": "^1.0.1",
     "keen-slider": "^5.4.0",
     "next": "10.0.3",

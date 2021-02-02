@@ -27,7 +27,12 @@ export default function ScreenshotSlider({ screenshots }) {
   };
   return (
     <>
-      <Carousel responsive={responsive}>
+      <Carousel
+        showDots={true}
+        infinite={true}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        responsive={responsive}
+      >
         {screenshots.map((screenshot) => (
           <div>
             <Image
