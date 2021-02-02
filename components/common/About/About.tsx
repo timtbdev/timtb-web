@@ -19,32 +19,14 @@ export default function About(props) {
     <>
       {/* About */}
       <div className="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-3">
-          <div className="sm:col-span-1">
-            <dt className="text-base font-semibold text-gray-900">Skills</dt>
-            <dd className="mt-1 text-base text-gray-500">{skills}</dd>
-          </div>
-          <div className="sm:col-span-1">
-            <dt className="text-base font-semibold text-gray-900">Location</dt>
-            <dd className="mt-1 text-base text-gray-500">{location}</dd>
-          </div>
-          <div className="sm:col-span-1">
-            <dt className="text-base font-semibold text-gray-900">Email</dt>
-            <dd className="mt-1 text-base text-gray-500">{email}</dd>
-          </div>
-          <div className="sm:col-span-3">
-            <dt className="text-base font-semibold text-gray-900 uppercase">
-              {greeting}
-            </dt>
-            <dd className="mt-1 max-w-3xl text-base text-gray-500">
-              <PortableText
-                blocks={description}
-                serializers={serializers}
-                className="text-base text-gray-500"
-              />
-            </dd>
-          </div>
-        </dl>
+        <div className="mt-6 px-4 py-5 sm:px-6 lg:px-8 bg-white shadow overflow-hidden sm:rounded-lg">
+          <p className="text-xl font-semibold text-gray-900">{greeting}</p>
+          <PortableText
+            blocks={description}
+            serializers={serializers}
+            className="text-base text-gray-500"
+          />
+        </div>
       </div>
     </>
   );

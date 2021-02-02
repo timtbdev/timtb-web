@@ -15,7 +15,7 @@ export default function LatestProjects(props) {
             <div className="w-full border-t border-gray-300"></div>
           </div>
           <div className="relative flex justify-start">
-            <span className="pr-3 bg-white text-base font-medium text-gray-900 uppercase">
+            <span className="pr-3 bg-gray-100 text-base font-medium text-gray-900 uppercase">
               Projects
             </span>
           </div>

@@ -1,10 +1,10 @@
 export default function Posts({ posts }) {
   return (
     <>
-      <div className="mt-6 pt-10 mb-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 divide-y-2 divide-gray-200">
+      <div className="mt-3 mb-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 divide-y-2 divide-gray-200">
         <div>
           <div className="grid gap-16 lg:grid-cols-1 lg:gap-x-5 lg:gap-y-12">
-            <div>
+            <div className="mt-6 px-4 py-5 sm:px-6 lg:px-8 bg-white shadow overflow-hidden sm:rounded-lg">
               <p className="text-sm text-gray-500">
                 <time dateTime="2020-03-16">Mar 16, 2020</time>
               </p>

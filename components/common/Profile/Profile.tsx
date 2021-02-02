@@ -7,7 +7,7 @@ export default function Profile(props) {
   return (
     <>
       {/* Profile header */}
-      <div>
+      <div className="bg-white">
         <div>
           <img
             className="h-28 w-full object-cover lg:h-28"
