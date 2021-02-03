@@ -76,7 +76,7 @@ export default function Home(props) {
           description={description}
         />
         <LatestProjects projects={projects} />
-        <Footer/>
+        <Footer />
       </Layout>
     </>
   );

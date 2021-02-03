@@ -23,10 +23,6 @@ export default function Profile(props) {
                 src={urlFor(profileImage).url()}
                 alt="Profile photo"
               />
-              <Image
-                {...useNextSanityImage(sanityClient, profileImage)}
-                sizes="(max-width: 128px) 9vw, 128px"
-              />
             </div>
             <div className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
               <div className="sm:hidden 2xl:block mt-6 min-w-0 flex-1">

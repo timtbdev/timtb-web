@@ -4,6 +4,7 @@ import { getClient, usePreviewSubscription } from "@libs/sanity";
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { PostHeader } from "@components/common/";
+import { Footer } from "@components/common/";
 
 const postQuery = groq`*[_type == "blog" && slug.current == $slug][0]
 {
@@ -11,7 +12,8 @@ const postQuery = groq`*[_type == "blog" && slug.current == $slug][0]
   slug,
   coverImage,
   publishedAt,
-  fullContent
+  category->{category},
+  content
 }
 `;
 
@@ -62,7 +64,7 @@ export default function Blog(props) {
     enabled: preview || router.query.preview !== null,
   });
 
-  const { title, slug, coverImage, publishedAt, fullContent } = post;
+  const { title, slug, coverImage, publishedAt, category, content } = post;
 
   const { name, profileImage } = profile;
   return (
@@ -73,8 +75,10 @@ export default function Blog(props) {
         slug={slug}
         coverImage={coverImage}
         publishedAt={publishedAt}
-        content={fullContent}
+        category={category}
+        content={content}
       />
+      <Footer />
     </>
   );
 }

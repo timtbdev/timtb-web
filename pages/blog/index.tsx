@@ -1,10 +1,9 @@
-import { Layout, ProjectDetail } from "@components/common/";
+import { Layout, PostHeader, Profile } from "@components/common/";
 import { groq } from "next-sanity";
 import { getClient, usePreviewSubscription } from "@libs/sanity";
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { Posts } from "@components/common/";
-import { Profile } from "@components/common/";
 import { Tabs } from "@components/common/";
 import { Footer } from "@components/common/";
 
@@ -15,7 +14,7 @@ const profileQuery = groq`
     name,
     profileImage,
     coverImage,
-    links[]->{title, url, icon}
+    links[]->{title, url, icon},
   }
 `;
 
