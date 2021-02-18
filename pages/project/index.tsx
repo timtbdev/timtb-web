@@ -9,55 +9,45 @@ import { getClient, usePreviewSubscription } from "@libs/sanity";
 import Error from "next/error";
 import { useRouter } from "next/router";
 
-const query = groq`
+const profileQuery = groq`
   *[_type == "profile"][0] {
     name,
     profileImage,
     coverImage,
-    links[]->{title, url, icon},
-    skills,
-    location,
-    email,
-    greeting,
-    description,
-    projects[]->{title, slug, language, components, architecture, backend, icon},
+    links[]->{title, url, icon}
   }
 `;
 
+const projectsQuery = groq`*[_type == "project"]`;
+
 export async function getStaticProps({ params = {}, preview = false }) {
-  const profileData = await getClient(preview).fetch(query);
+  const profileData = await getClient(preview).fetch(profileQuery);
+  const projectsData = await getClient(preview).fetch(projectsQuery);
   return {
     props: {
       preview,
       profileData,
+      projectsData,
     },
   };
 }
 
 export default function Home(props) {
-  const { profileData, preview } = props;
+  const { profileData, projectsData, preview } = props;
   const router = useRouter();
 
-  if (!router.isFallback && !profileData) {
+  if (!router.isFallback && !projectsData && !profileData) {
     return <Error statusCode={404} />;
   }
-  const { data: profile } = usePreviewSubscription(query, {
+  const { data: profile } = usePreviewSubscription(profileQuery, {
     initialData: profileData,
     enabled: preview || router.query.preview !== null,
   });
-
-  const {
-    name,
-    profileImage,
-    coverImage,
-    links,
-    skills,
-    location,
-    email,
-    greeting,
-    description,
-    projects,
-  } = profile;
+  const { data: projects } = usePreviewSubscription(projectsQuery, {
+    initialData: projectsData,
+    enabled: preview || router.query.preview !== null,
+  });
+  const { name, profileImage, coverImage, links } = profile;
   return (
     <>
       <Layout>
@@ -68,13 +58,6 @@ export default function Home(props) {
           links={links}
         />
         <Tabs />
-        <About
-          skills={skills}
-          location={location}
-          email={email}
-          greeting={greeting}
-          description={description}
-        />
         <Projects projects={projects} />
         <Footer />
       </Layout>

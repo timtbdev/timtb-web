@@ -45,7 +45,7 @@ export default function ProjectDetail(props) {
       <div className="min-h-screen bg-gray-100">
         <main className="py-10">
           {/* <!-- Project header --> */}
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:px-8">
             <div className="flex items-center space-x-5">
               <div className="flex-shrink-0">
                 <div className="relative">
@@ -99,7 +99,7 @@ export default function ProjectDetail(props) {
             </div>
           </div>
 
-          <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+          <div className="mt-8 max-w-5xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:grid-flow-col-dense lg:grid-cols-3">
             <div className="space-y-6 lg:col-start-1 lg:col-span-2">
               {/* <!-- Description list--> */}
               <section aria-labelledby="applicant-information-title">

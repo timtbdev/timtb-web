@@ -1,4 +1,4 @@
-import { Layout, PostHeader, Profile } from "@components/common/";
+import { Layout, Profile } from "@components/common/";
 import { groq } from "next-sanity";
 import { getClient, usePreviewSubscription } from "@libs/sanity";
 import Error from "next/error";

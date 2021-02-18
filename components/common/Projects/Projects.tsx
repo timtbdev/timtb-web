@@ -1,7 +1,7 @@
 import { urlFor } from "@libs/sanity";
 import Link from "next/link";
 
-export default function LatestProjects(props) {
+export default function Projects(props) {
   const { projects } = props;
   return (
     <>
@@ -41,7 +41,8 @@ export default function LatestProjects(props) {
                       {project.title}
                     </p>
                     <p className="text-base text-gray-500 truncate">
-                      {project.description}
+                      {project.language}, {project.components},
+                      {project.architecture}, {project.backend}
                     </p>
                   </a>
                 </div>

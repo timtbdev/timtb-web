@@ -4,6 +4,8 @@ import { getClient, usePreviewSubscription } from "@libs/sanity";
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { ProjectHeader } from "@components/common/";
+import { Layout, Profile } from "@components/common/";
+import { Tabs } from "@components/common/";
 import { Footer } from "@components/common/";
 
 const projectQuery = groq`*[_type == "project" && slug.current == $slug][0]
@@ -25,7 +27,9 @@ const projectQuery = groq`*[_type == "project" && slug.current == $slug][0]
 const profileQuery = groq`
   *[_type == "profile"][0] {
     name,
-    profileImage
+    profileImage,
+    coverImage,
+    links[]->{title, url, icon},
   }
 `;
 
@@ -34,8 +38,6 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
   });
   const profileData = await getClient(preview).fetch(profileQuery);
-
-  
 
   return {
     props: { preview, projectData, profileData },
@@ -85,24 +87,32 @@ export default function Project(props) {
     links,
   } = project;
 
-  const { name, profileImage } = profile;
+  const { name, profileImage, coverImage } = profile;
   return (
     <>
-      <ProjectHeader name={name} profileImage={profileImage} />
-      <ProjectDetail
-        title={title}
-        slug={slug}
-        language={language}
-        components={components}
-        architecture={architecture}
-        backend={backend}
-        icon={icon}
-        screenshots={screenshots}
-        publishedAt={publishedAt}
-        description={description}
-        links={links}
-      />
-      <Footer />
+      <Layout>
+        <Profile
+          name={name}
+          profileImage={profileImage}
+          coverImage={coverImage}
+          links={links}
+        />
+        <Tabs />
+        <ProjectDetail
+          title={title}
+          slug={slug}
+          language={language}
+          components={components}
+          architecture={architecture}
+          backend={backend}
+          icon={icon}
+          screenshots={screenshots}
+          publishedAt={publishedAt}
+          description={description}
+          links={links}
+        />
+        <Footer />
+      </Layout>
     </>
   );
 }
